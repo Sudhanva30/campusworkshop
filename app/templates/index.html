@@ -95,22 +95,22 @@
             </thead>
 
             <tbody>
-                {% for item in items %}
+                %for item in items %
                 <tr>
                     <td>{{item.id}}</td>
                     <td>{{item.task}}</td>
-                    {% if item.status == "Todo"%}
+                    % if item.status == "Todo"%
                     <td><button type="button" class="btn btn-outline-primary btn-sm state"
                             data-source="{{item.id}}">{{item.status}}</button></td>
-                    {%endif%}
-                    {% if item.status == "In Progress" %}
+                    %endif%
+                    % if item.status == "In Progress" %
                     <td><button type="button" class="btn btn-outline-success btn-sm state"
                             data-source="{{item.id}}">{{item.status}}</button></td>
-                    {%endif%}
-                    {% if item.status == "Completed" %}
+                    %endif%
+                    % if item.status == "Completed" %
                     <td><button type="button" class="btn btn-outline-danger btn-sm state" disabled
                             data-source="{{item.id}}">{{item.status}}</button></td>
-                    {%endif%}
+                    %endif%
 
                     <td><button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal"
                             data-bs-target="#edit-task-modal" data-source="{{item.id}}" data-content="{{item.task}}"><i
@@ -119,7 +119,7 @@
                     <td><button class="btn btn-outline-secondary btn-sm remove" data-source="{{item.id}}"
                             type="button">Delete</button></td>
                 </tr>
-                {% endfor %}
+                % endfor %
 
             </tbody>
         </table>
